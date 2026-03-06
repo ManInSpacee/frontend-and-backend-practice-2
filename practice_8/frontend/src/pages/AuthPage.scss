@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0;
+  font-family: Roboto, sans-serif;
+}
+
+.auth-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  min-width: 360px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 8px;
+    color: #006f4d;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__label {
+    font-size: 13px;
+    color: #555;
+    margin-top: 8px;
+  }
+
+  &__input {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.04);
+    font-size: 14px;
+    outline: none;
+
+    &:focus {
+      border-color: #00c186;
+    }
+  }
+
+  &__error {
+    color: #df0000;
+    font-size: 13px;
+    margin-top: 4px;
+  }
+
+  &__submit {
+    margin-top: 16px;
+    background: #00c186;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 193, 134, 0.3);
+
+    &:hover {
+      background: #00a674;
+    }
+  }
+
+  &__toggle {
+    background: none;
+    border: none;
+    color: #00a674;
+    cursor: pointer;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 4px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
