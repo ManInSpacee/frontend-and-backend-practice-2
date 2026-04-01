@@ -1,0 +1,17 @@
+{
+  "name": "practice_13-14",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "icons": "node generate-icons.js",
+    "serve": "npx serve . -p 8080"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "canvas": "^3.2.3"
+  }
+}

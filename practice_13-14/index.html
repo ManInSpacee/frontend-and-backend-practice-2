@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" href="/icons/icon-32.png" type="image/png">
+
+  <title>TASKS // PC PARTS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="header-brand">
+        <span class="header-icon">⚙</span>
+        <span class="header-title">TASK_MANAGER</span>
+      </div>
+      <div id="status" class="status status--online">ONLINE</div>
+    </header>
+
+    <main class="main">
+      <section class="add-section">
+        <form id="task-form" class="task-form">
+          <input
+            id="task-input"
+            class="task-input"
+            type="text"
+            placeholder="НОВАЯ ЗАДАЧА..."
+            autocomplete="off"
+            required
+          />
+          <button class="btn-add" type="submit">ДОБАВИТЬ</button>
+        </form>
+      </section>
+
+      <section class="tasks-section">
+        <div class="tasks-header">
+          <span class="tasks-title">СПИСОК ЗАДАЧ</span>
+          <span id="tasks-count" class="tasks-count">0</span>
+        </div>
+        <ul id="tasks-list" class="tasks-list"></ul>
+        <div id="empty-state" class="empty-state">
+          <span>// задачи отсутствуют</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span id="cache-status">SERVICE WORKER: ЗАГРУЗКА...</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
