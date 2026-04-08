@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="/icons/icon-32.png" type="image/png">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+  <title>TASKS // PC PARTS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <header class="header">
+      <div class="header-brand">
+        <span class="header-icon">⚙</span>
+        <span class="header-title">TASK_MANAGER</span>
+      </div>
+      <div id="status" class="status status--online">ONLINE</div>
+    </header>
+
+    <nav class="nav">
+      <button id="btn-home"  class="nav-btn nav-btn--active">ЗАДАЧИ</button>
+      <button id="btn-about" class="nav-btn">О ПРИЛОЖЕНИИ</button>
+    </nav>
+
+    <main id="app-content" class="main"></main>
+
+    <footer class="footer">
+      <div class="footer-sw">
+        <span id="sw-status">SERVICE WORKER: ЗАГРУЗКА...</span>
+      </div>
+      <div class="footer-push">
+        <!-- Кнопки управления push-уведомлениями -->
+        <button id="btn-push-enable"  class="btn-push btn-push--enable">ВКЛЮЧИТЬ УВЕДОМЛЕНИЯ</button>
+        <button id="btn-push-disable" class="btn-push btn-push--disable" style="display:none">ОТКЛЮЧИТЬ УВЕДОМЛЕНИЯ</button>
+      </div>
+    </footer>
+
+  </div>
+
+  <!--
+    Socket.IO клиент — загружается с нашего сервера (port 3001).
+    Подключаем ДО app.js, чтобы io() был доступен в нашем коде.
+  -->
+  <script src="https://localhost:3002/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

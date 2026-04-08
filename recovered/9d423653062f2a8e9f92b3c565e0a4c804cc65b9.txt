@@ -1,0 +1,139 @@
+$bg: #0b0f19;
+$panel: rgba(255, 255, 255, 0.03);
+$border: rgba(255, 255, 255, 0.10);
+$text: #e7eaf3;
+$primary: rgba(99, 102, 241, 0.55);
+$primaryBg: rgba(99, 102, 241, 0.18);
+$danger: rgba(239, 68, 68, 0.45);
+$dangerBg: rgba(239, 68, 68, 0.12);
+
+@mixin card($radius: 12px) {
+  border-radius: $radius;
+  border: 1px solid $border;
+  background: $panel;
+}
+
+@mixin container($w: 1280px) {
+  max-width: $w;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.storePage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: $bg;
+  color: $text;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+.storeHeader {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+
+  &__inner {
+    @include container();
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__right {
+    opacity: 0.75;
+    font-size: 13px;
+  }
+}
+
+.storeBrand {
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.storeMain {
+  flex: 1;
+  display: flex;
+}
+
+.storeContainer {
+  @include container();
+  padding: 16px;
+}
+
+.storeEmpty {
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  opacity: 0.85;
+}
+
+.productList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.productCard {
+  @include card(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+
+  &__image {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__price {
+    opacity: 0.85;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 6px;
+  }
+}
+
+.btn {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+
+  &--primary {
+    background: $primaryBg;
+    border: 1px solid $primary;
+  }
+
+  &--danger {
+    background: $dangerBg;
+    border: 1px solid $danger;
+  }
+}
+
+.storeFooter {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+
+  &__inner {
+    @include container();
+    padding: 14px 16px;
+    opacity: 0.7;
+    font-size: 13px;
+  }
+}

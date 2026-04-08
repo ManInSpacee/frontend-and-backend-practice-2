@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:           #0a0a0a;
+  --surface:      #111111;
+  --border:       #2a2a2a;
+  --border-bright:#3a3a3a;
+  --text:         #e0e0e0;
+  --text-muted:   #666;
+  --accent:       #ff4d00;
+  --accent-dim:   rgba(255, 77, 0, 0.15);
+  --green:        #00ff88;
+  --font:         'Share Tech Mono', 'Courier New', monospace;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   КАРКАС ПРИЛОЖЕНИЯ (App Shell)
+   Всё что ниже кэшируется и грузится мгновенно
+   ============================================================ */
+
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 2px solid var(--accent);
+  background: var(--surface);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-icon {
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+
+.header-title {
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.status {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid;
+}
+
+.status--online {
+  color: var(--green);
+  border-color: var(--green);
+  background: rgba(0, 255, 136, 0.05);
+}
+
+.status--offline {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* Навигация — две кнопки переключения страниц */
+.nav {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.nav-btn {
+  flex: 1;
+  padding: 0.75rem;
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--font);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+
+.nav-btn:last-child {
+  border-right: none;
+}
+
+.nav-btn:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.nav-btn--active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* ============================================================
+   ОСНОВНОЙ КОНТЕНТ — подгружается динамически
+   ============================================================ */
+
+.main {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Форма добавления */
+.add-section {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 1.25rem;
+}
+
+.task-form {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.task-input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border-bright);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  padding: 0.65rem 0.9rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.task-input::placeholder {
+  color: var(--text-muted);
+}
+
+.task-input:focus {
+  border-color: var(--accent);
+}
+
+.btn-add {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-family: var(--font);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  padding: 0.65rem 1.25rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.btn-add:hover  { background: #cc3d00; }
+.btn-add:active { background: #aa3300; }
+
+/* Список задач */
+.tasks-section {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  flex: 1;
+}
+
+.tasks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.tasks-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.tasks-count {
+  font-size: 0.75rem;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--accent);
+}
+
+.tasks-list {
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+
+.task-item:last-child   { border-bottom: none; }
+.task-item:hover        { background: rgba(255, 255, 255, 0.02); }
+
+.task-item--done .task-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.task-checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--border-bright);
+  background: var(--bg);
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.task-checkbox:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.task-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: -2px;
+  left: 1px;
+  font-size: 12px;
+  color: #fff;
+  font-family: monospace;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+.task-index {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  min-width: 2rem;
+  flex-shrink: 0;
+}
+
+.btn-delete {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--font);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.1s;
+}
+
+.btn-delete:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.empty-state {
+  display: none;
+  padding: 2.5rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.empty-state.visible { display: block; }
+
+/* Страница "О приложении" */
+.about-section {
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.about-header {
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+
+.about-row {
+  display: flex;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-row:last-child { border-bottom: none; }
+
+.about-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+.about-value {
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+/* Сообщение об ошибке загрузки страницы */
+.error-msg {
+  padding: 2rem;
+  text-align: center;
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   ФУТЕР
+   ============================================================ */
+
+.footer {
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}

@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(curl -s https://raw.githubusercontent.com/Anudellora/Frontend-backend/main/practica9-11/config/database.js)",
+      "Bash(curl -s https://raw.githubusercontent.com/Anudellora/Frontend-backend/main/practica9-11/middleware/authMiddleware.js)",
+      "Bash(curl -s https://raw.githubusercontent.com/Anudellora/Frontend-backend/main/practica9-11/middleware/roleMiddleware.js)",
+      "Bash(curl -s https://raw.githubusercontent.com/Anudellora/Frontend-backend/main/practica9-11/routes/auth.js)",
+      "Bash(curl -s https://raw.githubusercontent.com/Anudellora/Frontend-backend/main/practica9-11/routes/products.js)",
+      "Bash(curl -s https://raw.githubusercontent.com/Anudellora/Frontend-backend/main/practica9-11/routes/users.js)",
+      "Bash(curl -s https://raw.githubusercontent.com/Anudellora/Frontend-backend/main/practica9-11/client/src/App.jsx)",
+      "Bash(curl -s https://raw.githubusercontent.com/Anudellora/Frontend-backend/main/practica9-11/client/src/api/axios.js)",
+      "Bash(curl -s https://raw.githubusercontent.com/Anudellora/Frontend-backend/main/practica9-11/client/src/store/AuthContext.jsx)",
+      "Bash(curl -s https://raw.githubusercontent.com/Anudellora/Frontend-backend/main/practica9-11/client/src/pages/LoginPage.jsx)",
+      "Bash(curl -s https://raw.githubusercontent.com/Anudellora/Frontend-backend/main/practica9-11/client/src/pages/RegisterPage.jsx)",
+      "Bash(curl -s https://raw.githubusercontent.com/Anudellora/Frontend-backend/main/practica9-11/client/src/pages/ProductsPage.jsx)",
+      "Bash(curl -s https://raw.githubusercontent.com/Anudellora/Frontend-backend/main/practica9-11/client/src/components/ProtectedRoute.jsx)",
+      "Bash(curl -s https://raw.githubusercontent.com/Anudellora/Frontend-backend/main/practica9-11/client/src/components/Navbar.jsx)",
+      "Bash(npm install:*)",
+      "Bash(npm create:*)",
+      "Bash(npm init:*)",
+      "Bash(node --input-type=module)",
+      "Bash(npm run:*)",
+      "Bash(timeout 3 node server.js)",
+      "Bash(choco --version)",
+      "Bash(mkcert create-ca:*)",
+      "Bash(mkcert create-cert:*)",
+      "Bash(where mkcert:*)",
+      "Bash(netstat -ano)",
+      "Bash(powershell.exe \"Get-Process -Id \\(Get-NetTCPConnection -LocalPort 3000\\).OwningProcess 2>&1\")",
+      "Bash(sed -i 's/localhost:3001/localhost:3002/g' \"c:/Users/ManInSpace/WebstormProjects/frontend-backend/practice_17/app.js\")",
+      "Bash(sed -i 's/localhost:3001/localhost:3002/g' \"c:/Users/ManInSpace/WebstormProjects/frontend-backend/practice_17/sw.js\")",
+      "Bash(sed -i 's/url.port === .3001./url.port === '\\\\''3002'\\\\''/g' \"c:/Users/ManInSpace/WebstormProjects/frontend-backend/practice_17/sw.js\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\ManInSpace\\WebstormProjects\\frontend-backend\\practice_9\\backend"
+    ]
+  }
+}

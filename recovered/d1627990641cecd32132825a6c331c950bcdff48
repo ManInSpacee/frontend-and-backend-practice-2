@@ -1,0 +1,29 @@
+<!-- Фрагмент главной страницы. Загружается в <main> через fetch -->
+
+<section class="add-section">
+
+  <!-- Обычная задача -->
+  <form id="task-form" class="task-form">
+    <input id="task-input" class="task-input" type="text" placeholder="НОВАЯ ЗАДАЧА..." autocomplete="off" required />
+    <button class="btn-add" type="submit">ADD</button>
+  </form>
+
+  <!-- Задача с напоминанием — сервер запланирует push через setTimeout -->
+  <form id="reminder-form" class="task-form reminder-form">
+    <input id="reminder-text" class="task-input" type="text" placeholder="НАПОМИНАНИЕ..." autocomplete="off" required />
+    <input id="reminder-time" class="task-input datetime-input" type="datetime-local" required />
+    <button class="btn-remind" type="submit">REMIND</button>
+  </form>
+
+</section>
+
+<section class="tasks-section">
+  <div class="tasks-header">
+    <span class="tasks-title">СПИСОК ЗАДАЧ</span>
+    <span id="tasks-count" class="tasks-count">0</span>
+  </div>
+  <ul id="tasks-list" class="tasks-list"></ul>
+  <div id="empty-state" class="empty-state">
+    <span>// задачи отсутствуют</span>
+  </div>
+</section>

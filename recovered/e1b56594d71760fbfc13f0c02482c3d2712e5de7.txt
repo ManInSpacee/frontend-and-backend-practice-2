@@ -1,0 +1,17 @@
+{
+  "name": "practice_16",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "icons": "node generate-icons.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "canvas": "^3.2.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1",
+    "web-push": "^3.6.7"
+  }
+}
