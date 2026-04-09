@@ -2,3 +2,5 @@
 /tasks
 node_modules/
 dist/
+vapid.json
+*.pem
